@@ -4,7 +4,7 @@
   "description": "functional arguments",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --reporter nyan"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/bredele/deus/issues"
   },
-  "homepage": "https://github.com/bredele/deus"
+  "homepage": "https://github.com/bredele/deus",
+  "devDependencies": {
+    "mocha": "^1.18.2"
+  },
+  "dependencies": {
+    "indexof": "0.0.1"
+  }
 }
