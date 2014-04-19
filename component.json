@@ -2,7 +2,7 @@
   "name": "deus",
   "repo": "bredele/deus",
   "description": "Functional arguments",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "keywords": [],
   "dependencies": {
     "component/indexof": "~0.0.3"
