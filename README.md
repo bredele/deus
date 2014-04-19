@@ -10,11 +10,11 @@ deus
 
 with [component](http://github.com/component/component):
 
-   $ component install bredele/deus
+	$ component install bredele/deus
 
 with [nodejs](http://nodejs.org):
 
-   $ npm install deus
+	$ npm install deus
 
 
 ## Usage
