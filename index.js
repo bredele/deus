@@ -15,7 +15,11 @@ module.exports = deus;
 
 
 /**
- * deus constructor.
+ * Make two arguments function flexible.
+ *
+ * @param {String} one 
+ * @param {String} two
+ * @return {Function}
  * @api public
  */
 
