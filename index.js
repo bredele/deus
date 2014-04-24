@@ -36,6 +36,6 @@ function deus(one, two, fn) {
     for(var i = 0, l = arguments.length; i < l; i++) {
       type(arguments[i]);
     }
-    fn.apply(this, args);
+    return fn.apply(this, args);
   };
 }
