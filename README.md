@@ -55,4 +55,16 @@ init({ github : 'bredele'}, 'olivier');
 // => data: bredele
 ```
 
+deus preseves the other arguments:
+
+```js
+var other = deus('function', 'object', function(name, data, other) {
+	console.log('other:', other);
+});
+other({
+	github: 'bredele'
+}, 'olivier');
+// => olivier
+```
+
   Deus decreases the number of decisions the developer needs to make because the implementation is the same whatever the arguments are. The returned function is flexible and yet simple. 
