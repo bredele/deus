@@ -25,16 +25,16 @@ module.exports = deus;
 
 function deus(one, two, fn) {
   var types = [one, two];
-  var args = [,,];
-  var type = function(arg) {
+  var type = function(args, arg) {
     var idx = index(types, typeof arg);
     if(idx > -1 && !args[idx]) args[idx] = arg;
     else args.splice(args.length,0,arg);
   };
 
   return function() {
+    var args = [,,];
     for(var i = 0, l = arguments.length; i < l; i++) {
-      type(arguments[i]);
+      type(args, arguments[i]);
     }
     return fn.apply(this, args);
   };
