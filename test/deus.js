@@ -8,35 +8,77 @@ var deus = require('..');
 
 describe('arguments type', function() {
 
-	it('returns function with both arguments', function() {
-		var fn = deus('string', 'object', function(name, data) {
-			assert.equal(data.foo, 'bar');
-			assert.equal(name, 'olivier');
+	describe('2', function() {
+
+		it('returns function with both arguments', function() {
+			var fn = deus('string', 'object', function(name, data) {
+				assert.equal(data.foo, 'bar');
+				assert.equal(name, 'olivier');
+			});
+			fn('olivier', {
+				foo: 'bar'
+			});
 		});
-		fn('olivier', {
-			foo: 'bar'
+
+		it('returns function with only second argument', function() {
+			var fn = deus('string', 'object', function(name, data) {
+				assert.equal(data.foo, 'bar');
+				assert.equal(name, undefined);
+			});
+			fn({
+				foo: 'bar'
+			});
 		});
+
+		it('keep arguments order', function() {
+			var fn = deus('string', 'object', function(name, data) {
+				assert.equal(data.foo, 'bar');
+				assert.equal(name, 'olivier');
+			});
+			fn({
+				foo: 'bar'
+			}, 'olivier');
+		});
+
+		it('should preserve the other arguments', function() {
+			var fn = deus('function', 'object', function(name, data, other) {
+				assert.equal(other, 'bredele');
+			});
+			fn({
+				foo: 'bar'
+			}, 'bredele')
+		});
+
 	});
 
-	it('returns function with only second argument', function() {
-		var fn = deus('string', 'object', function(name, data) {
-			assert.equal(data.foo, 'bar');
-			assert.equal(name, undefined);
-		});
-		fn({
-			foo: 'bar'
-		});
-	});
+	// describe('> 2', function() {
 
-	it('keep arguments order', function() {
-		var fn = deus('string', 'object', function(name, data) {
-			assert.equal(data.foo, 'bar');
-			assert.equal(name, 'olivier');
-		});
-		fn({
-			foo: 'bar'
-		}, 'olivier');
-	});
+	// 	it('returns function with all arguments', function() {
+	// 		var fn = deus('string', 'object', 'boolean', function(name, data, exist) {
+	// 			assert(exist);
+	// 			assert.equal(name, 'olivier');
+	// 			assert.equal(data.foo, 'bar');
+	// 		});
+	// 		fn('olivier', {
+	// 			foo: 'bar'
+	// 		}, true);
+	// 	});
+
+	// 	it('returns function with only second argument', function() {
+	// 		var fn = deus('string', 'object', 'boolean', function(name, data, exist) {
+	// 			assert.equal(data.foo, 'bar');
+	// 			assert.equal(name, undefined);
+	// 			assert(exist);
+	// 		});
+
+	// 		fn({
+	// 			foo: 'bar'
+	// 		}, true);
+	// 	});
+
+
+	// });
+
 	
 });
 

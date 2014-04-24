@@ -29,11 +29,13 @@ function deus(one, two, fn) {
   var type = function(arg) {
     var idx = index(types, typeof arg);
     if(idx > -1) args[idx] = arg;
+    else args.splice(args.length,0,arg);
   };
 
-  return function(uno, dos) {
-    type(uno);
-    type(dos);
+  return function() {
+    for(var i = 0, l = arguments.length; i < l; i++) {
+      type(arguments[i]);
+    }
     fn.apply(this, args);
   };
 }
