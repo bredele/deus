@@ -42,11 +42,13 @@ describe('arguments type', function() {
 
 		it('should preserve the other arguments', function() {
 			var fn = deus('function', 'object', function(name, data, other) {
-				assert.equal(other, 'bredele');
+				assert.equal(other.name, 'bredele');
 			});
 			fn({
 				foo: 'bar'
-			}, 'bredele')
+			}, {
+				name: 'bredele'
+			})
 		});
 
 	});

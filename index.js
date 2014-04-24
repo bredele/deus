@@ -28,7 +28,7 @@ function deus(one, two, fn) {
   var args = [,,];
   var type = function(arg) {
     var idx = index(types, typeof arg);
-    if(idx > -1) args[idx] = arg;
+    if(idx > -1 && !args[idx]) args[idx] = arg;
     else args.splice(args.length,0,arg);
   };
 
