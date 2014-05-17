@@ -2,8 +2,11 @@
   "name": "deus",
   "repo": "bredele/deus",
   "description": "Functional arguments",
-  "version": "0.3.4",
-  "keywords": ["arguments", "functions"],
+  "version": "0.3.5",
+  "keywords": [
+    "arguments",
+    "functions"
+  ],
   "dependencies": {
     "component/indexof": "~0.0.3"
   },
