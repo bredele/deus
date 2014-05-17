@@ -51,6 +51,16 @@ describe('arguments type', function() {
 			})
 		});
 
+		it('should preserve the arguments length', function() {
+			var fn = deus('function', 'object', function(name, data, other) {
+				assert.equal(arguments.length, 3);
+				assert.equal(other, 'bredele');
+			});
+			fn(undefined, undefined, 'bredele');
+			//fn(undefined, undefined, undefined, 'bredele');
+			// after 2 arguments, we should preserve the order
+		});
+
 	});
 
 	// describe('> 2', function() {
